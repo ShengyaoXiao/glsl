@@ -61,7 +61,7 @@
     
     <script>
         if (!Detector.webgl) Detector.addGetWebGLMessage();
-        var camera, scene, orthoScene, renderer, controls;
+        var camera, moon, scene, orthoScene, renderer, controls;
         var orthoScene, orthoQuad, OrthographicCamera;
         var baseTexture, glowTexture, zoomBlurShader;
 
@@ -82,8 +82,8 @@
                     color: new THREE.Color(.57, .55, .30)
             } );
             
-            globe = new THREE.Mesh( globeGeometry, material );
-            scene.add( globe );
+            moon = new THREE.Mesh( globeGeometry, material );
+            scene.add( moon );
 
             renderer = new THREE.WebGLRenderer({
                 antialias: true
@@ -208,8 +208,10 @@
 
             // // render us done ti the canvas here 
             renderer.render(orthoScene, orthoCamera);
+
         }
     </script>
 
 	</body>
 </html>
+
